@@ -5,7 +5,8 @@ import {
   scryRenderedDOMComponentsWithTag
 } from 'react-addons-test-utils';
 import Voting from '../../src/compenents/Voting';
-import {expect} from 'chair';
+import {expect} from 'jest';
+
 describe('Voting', () => {
 
   it('renders a pair of buttons', () => {
@@ -14,8 +15,8 @@ describe('Voting', () => {
     );
     const buttons = scryRenderedDOMComponentsWithTag(component, 'button');
 
-    expect(button.length).to.equal(2);
-    expect(buttons[0].textConent).to.equal('Trainspotting');
-    expect(buttons[1].textConent).to.equal('28 Days Later');
+    expect(button.length).toBe(2);
+    expect(buttons[0].textConent).toBe('Trainspotting');
+    expect(buttons[1].textConent).toBe('28 Days Later');
   });
 });//describe('voting')
